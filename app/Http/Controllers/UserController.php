@@ -35,4 +35,10 @@ class UserController extends Controller
 
         return response()->json($user, 201);
     }
+
+    // Route to set CSRF cookie
+    public function csrfToken()
+    {
+        return response()->json(csrf_token());
+    }
 }
