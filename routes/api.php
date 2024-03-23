@@ -8,5 +8,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/users', [UserController::class, 'index']);
-Route::post('/users', [UserController::class, 'store']);
+Route::middleware('api')->get('/users', [UserController::class, 'index']);
+Route::middleware('api')->post('/users', [UserController::class, 'store']);
+
